@@ -28,126 +28,139 @@
             margin: 40px;
             margin-left: 5px;
         }
-        ul{
+    
+        ul {
             margin-block-start: 0%;
             margin-block-end: 0%;
-            padding-inline-start:30px;
+            padding-inline-start: 30px;
         }
-
-        th,td {
+    
+        th,
+        td {
             border: solid 1px;
             /* 枠線指定 */
             padding: 5px;
         }
-
+    
         th.width30 {
             width: 30%;
         }
-
+    
         th.width40 {
             width: 40%;
         }
-
+    
         table {
             border-collapse: collapse;
             /* セルの線を重ねる */
             table-layout: fixed;
             table-layout: fixed;
         }
-
-        th.th2_1{
+    
+        th.th2_1 {
             width: 300px;
         }
-
-        th.th2_2{
+    
+        th.th2_2 {
             width: 150px;
         }
-        th.th2_3{
+    
+        th.th2_3 {
             width: 150px;
         }
-        th.th2_4{
+    
+        th.th2_4 {
             width: 150px;
         }
-
+    
         a:link {
             color: #8888aa;
         }
-
+    
         a:visited {
             color: #aa88aa;
         }
-
+    
         a:hover {
             color: #ff8888;
         }
-
+    
         a:active {
             color: #ff8000;
         }
-
-
+    
+    
         h2 {
             border-bottom: 1px solid white;
             border-top: 1px solid white;
             margin-top: 40px;
-         }
-         h3 {
+        }
+    
+        h3 {
             margin-bottom: 0%;
-         }
-        h4{
+        }
+    
+        h4 {
             margin-bottom: 0%;
-         }
-
-        #conte{
+        }
+    
+        #conte {
             display: -webkit-flex;
-            display: flex; 
+            display: flex;
             /* overflow: hidden; */
             /* width:1000px; */
         }
+    
         #main {
             /* width:auto;
-            float:right; */
+                float:right; */
             /* width:800px; */
-            background-color:#111111;
+            background-color: #111111;
             /* float:right; */
-            
+    
         }
+    
         #saidebar {
-            
-            min-width:180px;;
-            height:100% ;
-            background-color:#222222;
+    
+            min-width: 180px;
+            ;
+            height: 100%;
+            background-color: #222222;
             /* float:left; */
-            margin-top:10px;
-
+            margin-top: 10px;
+    
             position: -webkit-sticky;
             position: sticky;
             top: 50px;
         }
-            /*                                           
-            table.tablesorter-default td {
-            background-color: #aaaaaa;
-            } */
-            
-        table.tablesorter-dark{
+    
+        /*                                           
+                table.tablesorter-default td {
+                background-color: #aaaaaa;
+                } */
+    
+        table.tablesorter-dark {
             width: auto;
             text-align: center;
             font-size: 16px;
             line-height: auto;
         }
-        table.tablesorter-dark th, .tablesorter-dark thead td{
+    
+        table.tablesorter-dark th,
+        .tablesorter-dark thead td {
             font-size: 16px;
         }
-
+    
         .cp_tooltip {
             position: relative;
             display: inline-block;
             cursor: pointer;
-            
+    
         }
+    
         .cp_tooltip .cp_tooltiptext {
             /* max-width: 500px;*/
-            width: auto; 
+            width: auto;
             min-width: 300px;
             position: absolute;
             z-index: 1;
@@ -163,47 +176,123 @@
             border-radius: 6px;
             background-color: #5f5f5f;
         }
+    
         /* .cp_tooltip .cp_tooltiptext::after {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            margin-left: -5px;
-            content: ' ';
-            border: 5px solid transparent;
-            border-top-color: #b93d3d;
-        } */
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                margin-left: -5px;
+                content: ' ';
+                border: 5px solid transparent;
+                border-top-color: #b93d3d;
+            } */
         .cp_tooltip:hover .cp_tooltiptext {
             visibility: visible;
             opacity: 1;
         }
-
-        .artfact{
+    
+        .artfact {
             display: flex;
             /* padding:5px; */
             text-align: left;
         }
-        .star3, .star4, .star5{
-            margin-right: 5px;
-        }
-        .star3{
-            background-color: #577ca4;
-        }
-        .star4{
-            background-color: #7d6ca8;
-        }
-        .star5{
-            background-color: #ad7833;
+    
+
+        .sq {
+            display: inline-block;
+            width:  30px;
+            height: 30px;
+            border: 1px solid;
         }
 
-        .enmyIcon{
-            border:solid 1px;
-            border-color:white;
-            width:50px;
+        .star1,
+        .star2,
+        .star3,
+        .star4,
+        .star5 {
+            margin-right: 5px;
+        }
+
+        .star1 {
+            background-color: #d4d4d4;
         }
         
-        .img45{
+        .star2 {
+            background-color: #68A185;
+        }
+    
+        .star3 {
+            background-color: #577ca4;
+        }
+    
+        .star4 {
+            background-color: #7d6ca8;
+        }
+    
+        .star5 {
+            background-color: #ad7833;
+        }
+    
+        .enmyIcon {
+            border: solid 1px;
+            border-color: white;
+            width: 50px;
+        }
+    
+        .img45 {
             width: 45px;
             height: 45px;
+        }
+
+        .tab_lab1, .tab_lab2, .tab_lab3 {
+            border: 1px solid;
+            border-color: #888888;
+            cursor : pointer;
+        }
+    
+        #tab1:checked~.panels #area1 {
+            display: block;
+            border-color: #ad7833;
+            /* background: #e05551; */
+        }
+    
+        #tab2:checked~.panels #area2 {
+            display: block;
+            border-color: #7d6ca8;
+            /* background: #dcdc3d; */
+        }
+    
+        #tab3:checked~.panels #area3 {
+            display: block;
+            border-color: #577ca4;
+            /* background: #639aa4; */
+        }
+
+        #tab1:checked~.tab_lab1 {
+            background-image: linear-gradient(transparent 70%, #ad7833 30%);
+            /* border: 1px solid;
+            color: #242424; */
+        }
+
+        #tab2:checked~.tab_lab2 {
+            background-image: linear-gradient(transparent 70%, #7d6ca8 30%);
+            /* border: 1px solid;
+            color: #242424; */
+        }
+
+        #tab3:checked~.tab_lab3 {
+            background-image: linear-gradient(transparent 70%, #577ca4 30%);
+            /* border: 1px solid;
+            color: #242424; */
+        }
+        .panel {
+            padding: 10px;
+            border: 1px solid;
+            display: none;
+        }
+
+        input[name="check"] {
+            display: none;
         }
 
 
@@ -221,6 +310,7 @@
         <li><a href="#Characters">Characters</a></li>
         <li><a href="#Material">Material</a></li>
         <li><a href="#character_EXP">character EXP</a></li>
+        <li><a href="#Weapon_EXP">Weapon EXP</a></li>
         <li><a href="#spiral">Spiral Abyss</a></li>
 </div>
 
@@ -3337,6 +3427,380 @@
 </div>
 
 
+<h2><a name="Weapon_EXP">Weapon EXP</a></h2>
+<div>
+
+
+    <section class="tab_contents">
+        <div class="tab_wrap">
+            <input id="tab1" type="radio" name="check" checked>
+            <label for="tab1" class="tab_lab1">star-5</label>
+            <input id="tab2" type="radio" name="check">
+            <label for="tab2" class="tab_lab2">star-4</label>
+            <input id="tab3" type="radio" name="check">
+            <label for="tab3" class="tab_lab3">star-3</label>
+            <div class="panels">
+                <div id="area1" class="panel">
+                    <ul class="panel_content">
+                        <h3>
+                            Exp table
+                        </h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Lvl Range</th>
+                                    <th>3 (10,000)</th>
+                                    <th>2 (2,000)</th>
+                                    <th>1 (400)</th>
+                                </tr>
+                                <tr>
+                                    <th>1-20</th>
+                                    <th>12</th>
+                                    <th></th>
+                                    <th>4</th>
+                                </tr>
+                                <tr>
+                                    <th>20-40</th>
+                                    <th>62</th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                </tr>
+                                <tr>
+                                    <th>40-50</th>
+                                    <th>62</th>
+                                    <th>4</th>
+                                    <th>1</th>
+                                </tr>
+                                <tr>
+                                    <th>50-60</th>
+                                    <th>92</th>
+                                    <th>4</th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <th>60-70</th>
+                                    <th>129</th>
+                                    <th>4</th>
+                                    <th>3</th>
+                                </tr>
+                                <tr>
+                                    <th>70-80</th>
+                                    <th>175</th>
+                                    <th></th>
+                                    <th>1</th>
+                                </tr>
+                                <tr>
+                                    <th>80-90</th>
+                                    <th>371</th>
+                                    <th>2</th>
+                                    <th>2</th>
+                                </tr>
+                                <tr>
+                                    <th>total</th>
+                                    <th>903</th>
+                                    <th>15</th>
+                                    <th>13</th>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>
+                            Ascensions Items
+                        </h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Phase</th>
+                                    <th>Ascension Material</th>
+                                    <th>Common Material 1</th>
+                                    <th>Common Material 2</th>
+                                </tr>
+                                <tr>
+                                    <th>1</th>
+                                    <th><span class="sq star2"></span>5</th>
+                                    <th><span class="sq star2"></span>5</th>
+                                    <th><span class="sq star1"></span>3</th>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <th><span class="sq star3"></span>5</th>
+                                    <th><span class="sq star2"></span>18</th>
+                                    <th><span class="sq star1"></span>12</th>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <th><span class="sq star3"></span>9</th>
+                                    <th><span class="sq star3"></span>9</th>
+                                    <th><span class="sq star2"></span>9</th>
+                                </tr>
+                                <tr>
+                                    <th>4</th>
+                                    <th><span class="sq star4"></span>5</th>
+                                    <th><span class="sq star3"></span>18</th>
+                                    <th><span class="sq star2"></span>14</th>
+                                </tr>
+                                <tr>
+                                    <th>5</th>
+                                    <th><span class="sq star4"></span>9</th>
+                                    <th><span class="sq star4"></span>14</th>
+                                    <th><span class="sq star3"></span>9</th>
+                                </tr>
+                                <tr>
+                                    <th>6/max</th>
+                                    <th><span class="sq star5"></span>6</th>
+                                    <th><span class="sq star4"></span>27</th>
+                                    <th><span class="sq star3"></span>18</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                       
+                    </ul>
+                </div>
+                <div id="area2" class="panel">
+                    <ul class="panel_content">
+                        <h3>
+                            Exp table
+                        </h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Lvl Range</th>
+                                    <th>3 (10,000)</th>
+                                    <th>2 (2,000)</th>
+                                    <th>1 (400)</th>
+                                </tr>
+                                <tr>
+                                    <th>1-20</th>
+                                    <th>8</th>
+                                    <th></th>
+                                    <th>3</th>
+                                </tr>
+                                <tr>
+                                    <th>20-40</th>
+                                    <th>41</th>
+                                    <th>2</th>
+                                    <th>3</th>
+                                </tr>
+                                <tr>
+                                    <th>40-50</th>
+                                    <th>41</th>
+                                    <th>4</th>
+                                    <th>2</th>
+                                </tr>
+                                <tr>
+                                    <th>50-60</th>
+                                    <th>61</th>
+                                    <th>4</th>
+                                    <th>1</th>
+                                </tr>
+                                <tr>
+                                    <th>60-70</th>
+                                    <th>86</th>
+                                    <th>3</th>
+                                    <th>1</th>
+                                </tr>
+                                <tr>
+                                    <th>70-80</th>
+                                    <th>116</th>
+                                    <th>3</th>
+                                    <th>3</th>
+                                </tr>
+                                <tr>
+                                    <th>80-90</th>
+                                    <th>247</th>
+                                    <th>3</th>
+                                    <th>2</th>
+                                </tr>
+                                <tr>
+                                    <th>total</th>
+                                    <th>600</th>
+                                    <th>19</th>
+                                    <th>15</th>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>
+                            Ascensions Items
+                        </h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Phase</th>
+                                    <th>Ascension Material</th>
+                                    <th>Common Material 1</th>
+                                    <th>Common Material 2</th>
+                                </tr>
+                                <tr>
+                                    <th>1</th>
+                                    <th><span class="sq star2"></span>3</th>
+                                    <th><span class="sq star2"></span>3</th>
+                                    <th><span class="sq star1"></span>2</th>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <th><span class="sq star3"></span>3</th>
+                                    <th><span class="sq star2"></span>12</th>
+                                    <th><span class="sq star1"></span>8</th>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <th><span class="sq star3"></span>6</th>
+                                    <th><span class="sq star3"></span>6</th>
+                                    <th><span class="sq star2"></span>6</th>
+                                </tr>
+                                <tr>
+                                    <th>4</th>
+                                    <th><span class="sq star4"></span>3</th>
+                                    <th><span class="sq star3"></span>12</th>
+                                    <th><span class="sq star2"></span>9</th>
+                                </tr>
+                                <tr>
+                                    <th>5</th>
+                                    <th><span class="sq star4"></span>6</th>
+                                    <th><span class="sq star4"></span>9</th>
+                                    <th><span class="sq star3"></span>6</th>
+                                </tr>
+                                <tr>
+                                    <th>6/max</th>
+                                    <th><span class="sq star5"></span>4</th>
+                                    <th><span class="sq star4"></span>18</th>
+                                    <th><span class="sq star3"></span>12</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ul>
+                </div>
+                <div id="area3" class="panel">
+                    <ul class="panel_content">
+                        <h3>
+                            Exp table
+                        </h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Lvl Range</th>
+                                    <th>3 (10,000)</th>
+                                    <th>2 (2,000)</th>
+                                    <th>1 (400)</th>
+                                </tr>
+                                <tr>
+                                    <th>1-20</th>
+                                    <th>5</th>
+                                    <th>1</th>
+                                    <th>4</th>
+                                </tr>
+                                <tr>
+                                    <th>20-40</th>
+                                    <th>27</th>
+                                    <th>2</th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <th>40-50</th>
+                                    <th>27</th>
+                                    <th>3</th>
+                                    <th>1</th>
+                                </tr>
+                                <tr>
+                                    <th>50-60</th>
+                                    <th>40</th>
+                                    <th>1</th>
+                                    <th>2</th>
+                                </tr>
+                                <tr>
+                                    <th>60-70</th>
+                                    <th>57</th>
+                                    <th>1</th>
+                                    <th></th>
+                                </tr>
+                                <tr>
+                                    <th>70-80</th>
+                                    <th>77</th>
+                                    <th></th>
+                                    <th>1</th>
+                                </tr>
+                                <tr>
+                                    <th>80-90</th>
+                                    <th>163</th>
+                                    <th>2</th>
+                                    <th>2</th>
+                                </tr>
+                                <tr>
+                                    <th>total</th>
+                                    <th>396</th>
+                                    <th>10</th>
+                                    <th>10</th>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3>
+                            Ascensions Items
+                        </h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Phase</th>
+                                    <th>Ascension Material</th>
+                                    <th>Common Material 1</th>
+                                    <th>Common Material 2</th>
+                                </tr>
+                                <tr>
+                                    <th>1</th>
+                                    <th><span class="sq star2"></span>2</th>
+                                    <th><span class="sq star2"></span>2</th>
+                                    <th><span class="sq star1"></span>1</th>
+                                </tr>
+                                <tr>
+                                    <th>2</th>
+                                    <th><span class="sq star3"></span>2</th>
+                                    <th><span class="sq star2"></span>8</th>
+                                    <th><span class="sq star1"></span>5</th>
+                                </tr>
+                                <tr>
+                                    <th>3</th>
+                                    <th><span class="sq star3"></span>4</th>
+                                    <th><span class="sq star3"></span>4</th>
+                                    <th><span class="sq star2"></span>4</th>
+                                </tr>
+                                <tr>
+                                    <th>4</th>
+                                    <th><span class="sq star4"></span>2</th>
+                                    <th><span class="sq star3"></span>8</th>
+                                    <th><span class="sq star2"></span>6</th>
+                                </tr>
+                                <tr>
+                                    <th>5</th>
+                                    <th><span class="sq star4"></span>4</th>
+                                    <th><span class="sq star4"></span>6</th>
+                                    <th><span class="sq star3"></span>4</th>
+                                </tr>
+                                <tr>
+                                    <th>6/max</th>
+                                    <th><span class="sq star5"></span>3</th>
+                                    <th><span class="sq star4"></span>12</th>
+                                    <th><span class="sq star3"></span>8</th>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+</div>
+
+
+
+
+
 <h2><a name="spiral">Abyss Spiral</a></h2>
 <div>
 
@@ -4033,9 +4497,6 @@
         </td>
         <td style="text-align: center;">100
         </td></tr></tbody></table>
-
-
-        <a href=".top3.html">aaaa</a>
     </details>
 
 </div>
