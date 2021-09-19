@@ -14,7 +14,8 @@ const sakamain  =["HP%","DEF%","ATK%","Elemental Mastery","pyro DMG Bonus%",
 const atamamain =["HP%","DEF%","ATK%","Elemental Mastery","CRIT Rate%","CRIT DMG%","Healing Bonus%"];
 const subStat   =["HP","ATK","DEF","HP%","ATK%","DEF%","Elemental Mastery","Energy Recharge%","CRIT Rate%","CRIT DMG%"];;
 const anystat =["wepon ATK","char ATK","Base HP","Base ATK","HP","ATK","DEF","HP%","DEF%","ATK%","Elemental Mastery","Energy Recharge%","pyro DMG Bonus%","hydro DMG Bonus%","anemo DMG Bonus%","electro DMG Bonus%","cyro DMG Bonus%","geo DMG Bonus%","Physical DMG Bonus%","CRIT Rate%","CRIT DMG%","Healing Bonus%"];
-
+const charWhiteHP =["charWhite HP"]
+const charWhiteDEF =["charWhite DEF"]
 
 class stat{
     constructor(num){
@@ -51,6 +52,18 @@ class stat{
         this.gdb = 0;
         this.phydb = 0;
 
+        this.HP = 0;
+        this.DEF = 0;
+        this.charHP = 0;
+        this.charDEF = 0;
+        this.baseHP = 0;
+        this.HPflat = 0;
+        this.DEFflat = 0;
+        this.HPp = 0;
+        this.DEFp = 0;
+
+        this.EM =0;
+        this.ERp = 0;
     }
 
     // createShowDiv(){
@@ -158,9 +171,33 @@ class stat{
         col3.appendChild(p1);
 
 
+        var col4 = document.createElement("div");
+        col4.classList.add("col-3");
+        p1 = document.createElement("pre");
+        p1.innerHTML= "";
+        var str="";
+        
+        str += this._onelinestr("ALL HP", this.HP);
+        str += this._onelinestr("hp white", this.charHP);
+        str += this._onelinestr("hp green",(this.baseHP + this.HPflat+((this.HPp/100.0)*this.charHP)));
+
+        str += this._onelinestr("ALL DEF", this.DEF);
+        str += this._onelinestr("DEF white", this.charDEF);
+        str += this._onelinestr("DEF green",(this.DEFp/100.0)*this.charDEF + this.DEFflat);
+        str+=ret;
+        str += this._onelinestr("Ele Recha%",this.ERp)
+        str += this._onelinestr("Ele mstry",this.EM)
+
+        p1.innerHTML=str;
+        col4.appendChild(p1);
+
+
+
         rowdiv.appendChild(col1);
         rowdiv.appendChild(col2);
         rowdiv.appendChild(col3);
+        rowdiv.appendChild(col4);
+        
         
         return rowdiv;
     }
@@ -188,7 +225,7 @@ class stat{
                 this.charAtk += v;
                 break;
             case "Base HP":
-
+                this.baseHP += v
                 break;
             case "Base ATK":
                 this.baseAtk += v;
@@ -197,28 +234,28 @@ class stat{
                 this.totalAtk += v;
                 break;
             case "HP":
-
+                this.HPflat += v
                 break;
             case "ATK":
                 this.atkflat += v;
                 break;
             case "DEF":
-
+                this.DEFflat += v;
                 break;
             case "HP%":
-
+                this.HPp += v
                 break;
             case "DEF%":
-
+                this.DEFp += v
                 break;
             case "ATK%":
                 this.atkP += v;
                 break;
             case "Elemental Mastery":
-
+                this.EM += v;
                 break;
             case "Energy Recharge%":
-
+                this.ERp += v;
                 break;
             case "pyro DMG Bonus%":
                 this.pdb += v;
@@ -250,6 +287,13 @@ class stat{
             case "Healing Bonus%":
 
                 break;
+            case "charWhite HP":
+                this.charHP = v;
+                break;
+            case "charWhite DEF":
+                this.charDEF = v;
+                break;
+                    
         }
 
     }
@@ -263,6 +307,11 @@ class stat{
         
 
         this.ATK = (this.totalAtk * (1+(this.atkP/100.0))) + this.atkflat + this.baseAtk;
+
+        this.HP = (this.charHP) +this.baseHP + this.HPflat+((this.HPp/100.0)*this.charHP)
+        this.DEF = (this.charDEF) + this.DEFflat +((this.DEFp/100.0)*this.charDEF);
+
+
     }
 
 
@@ -771,6 +820,17 @@ function initItem(tagEle, num, ins){
         tagEle.appendChild(row5);
         lsr.push(ta1,row1,row2,row3,row4,row5);
 
+    }else if(num == 9){
+        //charStat
+        ta1.value ="charStat";
+        var row1 = createStat("charWhite HP",charWhiteHP);
+        var row2 = createStat("charWhite DEF",charWhiteDEF);
+
+        tagEle.appendChild(row1);
+        tagEle.appendChild(row2);
+
+        lsr.push(ta1,row1,row2);
+
     }
 
     if(ins != null){
@@ -1085,6 +1145,10 @@ function createSelect(num){
     op8.textContent = "any";
     op8.setAttribute("value",8)
 
+    var op9 = document.createElement("option");
+    op9.textContent = "charStat";
+    op9.setAttribute("value",9)
+
     se.appendChild(op0);
     se.appendChild(op1);
     se.appendChild(op2);
@@ -1094,6 +1158,7 @@ function createSelect(num){
     se.appendChild(op6);
     se.appendChild(op7);
     se.appendChild(op8);
+    se.appendChild(op9);
 
     se.children[num].selected = true;
 
